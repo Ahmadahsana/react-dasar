@@ -1,14 +1,23 @@
 // import React, { useEffect, useRef, useState } from "react";
 // import { Container } from "react-bootstrap";
 import MainLayout from "./components/layout/main.layout";
-import Images from "./components/images";
+import Albums from "./components/albums/main.albums";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 const App = () => {
   return (
     <>
       <MainLayout>
+        <Router>
+          <Routes>
+            <Route path='/' element={<h1>HomePage</h1>} />
+            <Route path='/albums' element={<Albums />} />
+            <Route path='/post' element={<h1>Post</h1>} />
 
-        <Images title="Image API" description="fetch api dari tridh party" />
+          </Routes>
+        </Router>
+        {/* <Albums title="Image API" description="fetch api dari tridh party" /> */}
 
       </MainLayout >
     </>
